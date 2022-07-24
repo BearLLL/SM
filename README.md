@@ -1,4 +1,5 @@
 # SM3: :boom::boom::boom:
+### Original:http://www.sca.gov.cn/sca/xwdt/2010-12/17/1002389/files/302a3ada057c4a73830536d03e683110.pdf
 ### 符号：
     ABCDEFGH：8个字寄存器或它们的值的串联
     B(i)：第i个消息分组
