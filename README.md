@@ -1,5 +1,6 @@
 # SM3: :boom::boom::boom:
-### Original:http://www.sca.gov.cn/sca/xwdt/2010-12/17/1002389/files/302a3ada057c4a73830536d03e683110.pdf
+### Original:<br>
+http://www.sca.gov.cn/sca/xwdt/2010-12/17/1002389/files/302a3ada057c4a73830536d03e683110.pdf
 ### 一、符号：
     ABCDEFGH：8个字寄存器或它们的值的串联
     B(i)：第i个消息分组
@@ -50,7 +51,9 @@
     输出256比特的杂凑值 y=ABCDEFGH
 
 # SM2: :boom::boom::boom:
-### Original:https://blog.csdn.net/m0_57291352/article/details/123693837
+### Original:<br>
+https://blog.csdn.net/m0_57291352/article/details/123693837<br>
+https://github.com/gongxian-ding/gmssl-python/blob/master/gmssl/sm2.py
 ### 一、算法简述
         SM2是一种非对称密码算法，基于椭圆曲线密码的公钥密码算法标准，其密钥长度256bit，
     包含数字签名、密钥交换和公钥加密，用于替换RSA/DH/ECDSA/ECDH等国际算法。可以满足电子
