@@ -48,3 +48,6 @@
 #### 3.4 杂凑值
     ABCDEFGH ← V(n)
     输出256比特的杂凑值 y=ABCDEFGH
+
+# SM2: :boom::boom::boom:
+### Original:https://blog.csdn.net/m0_57291352/article/details/123693837
