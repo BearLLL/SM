@@ -42,5 +42,9 @@
 * 迭代过程：
 ![error](pictures/pic1.png "迭代过程")
 * 消息扩展：
-![error]
+![error](pictures/pic2.png "消息扩展")
+* 压缩函数：
+![error](pictures/pic3.png "压缩函数")
 #### 3.4 杂凑值
+    ABCDEFGH ← V(n)
+    输出256比特的杂凑值 y=ABCDEFGH
