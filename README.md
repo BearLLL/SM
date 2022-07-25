@@ -95,3 +95,7 @@ https://github.com/gongxian-ding/gmssl-python/blob/master/gmssl/sm2.py
 ![error](pictures/pic6.png "sm2结果")
 * sm2-gmssl:
 ![error](pictures/pic7.png "sm2-gmssl结果")
+
+# SM4: :boom::boom::boom:
+### Original:<br>
+https://blog.csdn.net/qq_41610725/article/details/116795599
