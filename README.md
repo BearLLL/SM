@@ -99,3 +99,10 @@ https://github.com/gongxian-ding/gmssl-python/blob/master/gmssl/sm2.py
 # SM4: :boom::boom::boom:
 ### Original:<br>
 https://blog.csdn.net/qq_41610725/article/details/116795599
+### 一、算法介绍
+        与DES和AES算法类似，SM4算法是一种分组密码算法。其分组长度为128bit，密钥长度也为128bit。
+    加密算法与密钥扩展算法均采用32轮非线性迭代结构，以字（32位）为单位进行加密运算，每一次迭代运
+    算均为一轮变换函数F。SM4算法加/解密算法的结构相同，只是使用轮密钥相反，其中解密轮密钥是加密轮
+    密钥的逆序。SM4有很高的灵活性，所采用的S盒可以灵活地被替换，以应对突发性的安全威胁。算法的32
+    轮迭代采用串行处理，这与AES中每轮使用代换和混淆并行地处理整个分组有很大不同。
+
