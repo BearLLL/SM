@@ -49,6 +49,10 @@ http://www.sca.gov.cn/sca/xwdt/2010-12/17/1002389/files/302a3ada057c4a73830536d0
 #### 3.4 杂凑值
     ABCDEFGH ← V(n)
     输出256比特的杂凑值 y=ABCDEFGH
+### 四、运行结果
+    明文：bear
+    结果：
+![error](pictures/pic5.png "sm3结果")
 
 # SM2: :boom::boom::boom:
 ### Original:<br>
