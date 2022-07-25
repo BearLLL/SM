@@ -90,3 +90,5 @@ https://github.com/gongxian-ding/gmssl-python/blob/master/gmssl/sm2.py
     5.M~=C2+t
     6.u=Hash(x2||M~||y2)
     7.M~为明文
+### 五、运行结果
+![error](pictures/pic6.png "sm2结果")
