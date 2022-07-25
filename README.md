@@ -98,7 +98,8 @@ https://github.com/gongxian-ding/gmssl-python/blob/master/gmssl/sm2.py
 
 # SM4: :boom::boom::boom:
 ### Original:<br>
-https://blog.csdn.net/qq_41610725/article/details/116795599
+https://blog.csdn.net/qq_41610725/article/details/116795599<br>
+https://wenku.baidu.com/view/e4c4404f1b2e453610661ed9ad51f01dc3815701?fr=xueshu
 ### 一、算法介绍
         与DES和AES算法类似，SM4算法是一种分组密码算法。其分组长度为128bit，密钥长度也为128bit。
     加密算法与密钥扩展算法均采用32轮非线性迭代结构，以字（32位）为单位进行加密运算，每一次迭代运
@@ -115,3 +116,4 @@ https://blog.csdn.net/qq_41610725/article/details/116795599
          (K0,K1,K2,K3)=(MK0⊕FK0,MK1⊕FK1,MK2⊕FK2,MK3⊕FK3)
     2.获取子密钥：
          rk_i=K_i+4=K_i⊕T'(K_i+1⊕K_i+2⊕K_i+3⊕CK_i)
+         其中 T：B⊕(B<<<13)⊕(B<<<23)
