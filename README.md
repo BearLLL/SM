@@ -91,4 +91,7 @@ https://github.com/gongxian-ding/gmssl-python/blob/master/gmssl/sm2.py
     6.u=Hash(x2||M~||y2)
     7.M~为明文
 ### 五、运行结果
+* sm2:
 ![error](pictures/pic6.png "sm2结果")
+* sm2-gmssl:
+![error](pictures/pic7.png "sm2-gmssl结果")
