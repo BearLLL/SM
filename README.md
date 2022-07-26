@@ -142,3 +142,4 @@ CK=(CK_0,CK_1,...,CK_31)<br>
 * sm4-gmssl:
 ![error](pictures/pic8.png "sm4-gmssl结果")
 * sm4:
+![error](pictures/pic10.png "sm4结果")
