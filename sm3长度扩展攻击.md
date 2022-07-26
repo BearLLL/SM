@@ -9,4 +9,7 @@ https://github.com/hjzin/SM3LengthExtensionAttack/blob/master/%E5%AE%9E%E9%AA%8C
     到合法的哈希值。
 ### 二、攻击过程
     1、随机生成一个消息（m），用sm3中的函数计算出hash值（hash1）。
-    2.生成一个附加消息（m`），用hash1推算出加密结束后8个向量的值，再用它们去加密
+    2.生成一个附加消息（m`），用hash1推算出加密结束后8个向量的值，再用它们去加密m`，得到hash值（hash2）。
+    3.计算m + padding + m`的hash值（hash3），如果攻击成功，则有 hash2 = hash3。
+### 三、攻击结果
+
