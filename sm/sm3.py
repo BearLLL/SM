@@ -122,6 +122,44 @@ def sm3_Hash(m):
     for i in y:
         result = '%s%08x' % (result,i)
     return result
+    
+def sm3_hash(msg,vectors):
+    len1 = len(msg)
+    reserve1 = len1 % 64
+    msg.append(0x80)
+    reserve1 = reserve1 + 1
+    # 56-64, add 64 byte
+    range_end = 56
+    if reserve1 > range_end:
+        range_end = range_end + 64
+
+    for i in range(reserve1, range_end):
+        msg.append(0x00)
+
+    bit_length = (len1) * 8
+    bit_length_str = [bit_length % 0x100]
+    for i in range(7):
+        bit_length = int(bit_length / 0x100)
+        bit_length_str.append(bit_length % 0x100)
+    for i in range(8):
+        msg.append(bit_length_str[7-i])
+
+    group_count = round(len(msg) / 64) - 1
+
+    B = []
+    for i in range(0, group_count):
+        B.append(msg[(i + 1)*64:(i+2)*64])
+
+    V = []
+    V.append(vectors)
+    for i in range(0, group_count):
+        V.append(sm3_CF(V[i], B[i]))
+
+    y = V[i+1]
+    result = ""
+    for i in y:
+        result = '%s%08x' % (result, i)
+    return result
 
 def sm3_KDF(z, keylen):   #z为16进制表示的比特串（str），krylen为密钥长度（单位byte）
     keylen = int(keylen)
