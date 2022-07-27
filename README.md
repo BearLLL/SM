@@ -139,7 +139,7 @@ CK=(CK_0,CK_1,...,CK_31)<br>
 ### 四、解密算法
     解密算法与加密算法一致，只是在解密算法中逆序使用轮密钥，即(rk_31,rk_30,...,rk_0)。
 ### 五、运行结果
-* sm4-gmssl:
+* sm4-gmssl:<br>
 ![error](pictures/pic8.png "sm4-gmssl结果")
-* sm4:
+* sm4:<br>
 ![error](pictures/pic10.png "sm4结果")
