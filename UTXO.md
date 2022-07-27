@@ -1,7 +1,7 @@
 # UTXO :skull:
 ### Original：
-https://blog.csdn.net/XYlittlework/article/details/115395099
-https://www.jb51.net/article/249057.htm
+https://blog.csdn.net/XYlittlework/article/details/115395099<br>
+https://www.jb51.net/article/249057.htm<br>
 https://github.com/liuchengxu/blockchain-tutorial/blob/master/content/part-4/transactions-1.md
 ### 一、UTXO解释
         UTXO（Unspent Transaction Outputs）是未花费的交易输出，它是比特币交易生成及验证的一个
