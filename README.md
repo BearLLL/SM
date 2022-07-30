@@ -41,11 +41,18 @@ http://www.sca.gov.cn/sca/xwdt/2010-12/17/1002389/files/302a3ada057c4a73830536d0
     假设消息m的长度为l比特。首先将比特"1"添加到消息的末尾，再添加k个"0"，k是满足l + 1 + k ≡ 448 mod 512的最小的非负整数。然后再添加一个64位比特串，该比特串是长度l的二进制表示。填充后的消息m′ 的比特长度为512的倍数。
 #### 3.3 迭代压缩
 * 迭代过程：
-![error](pictures/pic1.png "迭代过程")
+<div align=center>
+<img width="900" alt="pic1" src="https://user-images.githubusercontent.com/109841017/181905227-3c1d1702-1d8e-456d-ad9b-5f2d75212cd6.png">
+</div>
 * 消息扩展：
-![error](pictures/pic2.png "消息扩展")
+<div align=center>
+<img width="900" alt="pic2" src="https://user-images.githubusercontent.com/109841017/181905241-fffdd1a7-3baf-43a8-96ce-2a02a59cac57.png">
+</div>
 * 压缩函数：
 ![error](pictures/pic3.png "压缩函数")
+<div align=center>
+
+</div>
 #### 3.4 杂凑值
     ABCDEFGH ← V(n)
     输出256比特的杂凑值 y=ABCDEFGH
