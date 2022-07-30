@@ -105,7 +105,7 @@ https://github.com/gongxian-ding/gmssl-python/blob/master/gmssl/sm2.py
   <div align=center>
   <img width="900" alt="pic6" src="https://user-images.githubusercontent.com/109841017/181905324-c3e5ace9-68db-4312-bd18-f69824d3d4f8.png">
   </div>
-* sm2-gmssl:
+* sm2-gmssl（直接使用gmssl库，优化）:
   <div align=center>
   <img width="900" alt="pic7" src="https://user-images.githubusercontent.com/109841017/181905337-f6719a6a-f6fe-4091-b3f6-b211d1ddaf44.png">
   </div>
@@ -152,7 +152,7 @@ CK=(CK_0,CK_1,...,CK_31)<br>
 ### 四、解密算法
   解密算法与加密算法一致，只是在解密算法中逆序使用轮密钥，即(rk_31,rk_30,...,rk_0)。
 ### 五、运行结果
-* sm4-gmssl:<br>
+* sm4-gmssl（直接使用gmssl库，优化）:<br>
   <div align=center>
   <img width="900" alt="pic8" src="https://user-images.githubusercontent.com/109841017/181905958-8db5613e-8877-4a52-81c2-824ff225fa3a.png">
   </div>
