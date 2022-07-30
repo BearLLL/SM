@@ -36,30 +36,32 @@ http://www.sca.gov.cn/sca/xwdt/2010-12/17/1002389/files/302a3ada057c4a73830536d0
 * P1(X)=`X ⊕ (X ≪ 15) ⊕ (X ≪ 23)`
 ### 三、算法描述
 #### 3.1 概述
-    对长度为l(l < 2^64) 比特的消息m，SM3杂凑算法经过填充和迭代压缩，生成杂凑值，杂凑值长度为256比特。
+        对长度为l(l < 2^64) 比特的消息m，SM3杂凑算法经过填充和迭代压缩，生成杂凑值，杂凑值长度为256比特。
 #### 3.2 填充
-    假设消息m的长度为l比特。首先将比特"1"添加到消息的末尾，再添加k个"0"，k是满足l + 1 + k ≡ 448 mod 512的最小的非负整数。然后再添加一个64位比特串，该比特串是长度l的二进制表示。填充后的消息m′ 的比特长度为512的倍数。
+        假设消息m的长度为l比特。首先将比特"1"添加到消息的末尾，再添加k个"0"，k是满足l + 1 + k ≡ 448 mod 512的最小的非负整数。然后再添加一个64位比特串，
+    该比特串是长度l的二进制表示。填充后的消息m′ 的比特长度为512的倍数。
 #### 3.3 迭代压缩
 * 迭代过程：
-<div align=center>
-<img width="900" alt="pic1" src="https://user-images.githubusercontent.com/109841017/181905227-3c1d1702-1d8e-456d-ad9b-5f2d75212cd6.png">
-</div>
+  <div align=center>
+  <img width="900" alt="pic1" src="https://user-images.githubusercontent.com/109841017/181905227-3c1d1702-1d8e-456d-ad9b-5f2d75212cd6.png">
+  </div>
 * 消息扩展：
-<div align=center>
-<img width="900" alt="pic2" src="https://user-images.githubusercontent.com/109841017/181905241-fffdd1a7-3baf-43a8-96ce-2a02a59cac57.png">
-</div>
+  <div align=center>
+  <img width="900" alt="pic2" src="https://user-images.githubusercontent.com/109841017/181905241-fffdd1a7-3baf-43a8-96ce-2a02a59cac57.png">
+  </div>
 * 压缩函数：
-![error](pictures/pic3.png "压缩函数")
-<div align=center>
-
-</div>
+  <div align=center>
+  <img width="900" alt="pic3" src="https://user-images.githubusercontent.com/109841017/181905285-af161548-4016-4528-85b3-52fad7c0a279.png">
+  </div>
 #### 3.4 杂凑值
     ABCDEFGH ← V(n)
     输出256比特的杂凑值 y=ABCDEFGH
 ### 四、运行结果
     明文：bear
     结果：
-![error](pictures/pic5.png "sm3结果")
+  <div align=center>
+  <img width="900" alt="pic5" src="https://user-images.githubusercontent.com/109841017/181905294-cfbb2e58-6faa-4028-a923-3ca39d9fda8a.png">
+  </div>
 
 # SM2: :boom::boom::boom:
 ### Original:<br>
@@ -71,7 +73,9 @@ https://github.com/gongxian-ding/gmssl-python/blob/master/gmssl/sm2.py
         SM2采用的是ECC 256位的一种，其安全强度比RSA 2048位高，且运算速度快于RSA。随着密码技术和计算技术的发展，目前常用的1024位RSA算法面临严重的安全威胁，我们
     国家密码管理部门经过研究，决定采用SM2椭圆曲线算法替换RSA算法。SM2算法在安全性、性能上都具有优势。
 ### 二、获取公私钥
-![error](pictures/pic4.png "获取公私钥")
+<div align=center>
+<img width="400" alt="pic4" src="https://user-images.githubusercontent.com/109841017/181905314-fc81d604-d65b-427f-9b51-28c0b868cd0a.png">
+</div>
     其中**密钥对**的生成如下：<br>
     1.产生随机整数d[1,n-2]
     2.G为基点，计算点P=(xP,yP)=[d]G
@@ -97,9 +101,14 @@ https://github.com/gongxian-ding/gmssl-python/blob/master/gmssl/sm2.py
     7.M~为明文
 ### 五、运行结果
 * sm2:
-![error](pictures/pic6.png "sm2结果")
+<div align=center>
+<img width="900" alt="pic6" src="https://user-images.githubusercontent.com/109841017/181905324-c3e5ace9-68db-4312-bd18-f69824d3d4f8.png">
+</div>
+
 * sm2-gmssl:
-![error](pictures/pic7.png "sm2-gmssl结果")
+<div align=center>
+<img width="900" alt="pic7" src="https://user-images.githubusercontent.com/109841017/181905337-f6719a6a-f6fe-4091-b3f6-b211d1ddaf44.png">
+</div>
 
 # SM4: :boom::boom::boom:
 ### Original:<br>
@@ -134,6 +143,9 @@ CK=(CK_0,CK_1,...,CK_31)<br>
 ### 三、加密算法
         加密算法包含32次迭代运算和1次反序变换R，假设输入明文为(X_0,X_1,X_2,X_3)，密文输出为(Y_0,Y_1,Y_2,Y_3)，轮密钥为rk_i(i=0,1,...,31)。
 ![error](pictures/pic9.png "迭代运算")
+<div align=center>
+
+</div>
     1.首先执行32次迭代运算，如（1）式所示。<br>
     2.对最后一轮数据进行反序变换并得到密文输出，如（2）式所示。<br>
     `（1）和（2）中的T是可逆变换，由非线性变换τ和线性变换L复合而成，即T(·)=L(τ(·))。
@@ -143,5 +155,11 @@ CK=(CK_0,CK_1,...,CK_31)<br>
 ### 五、运行结果
 * sm4-gmssl:<br>
 ![error](pictures/pic8.png "sm4-gmssl结果")
+<div align=center>
+
+</div>
 * sm4:<br>
 ![error](pictures/pic10.png "sm4结果")
+<div align=center>
+
+</div>
