@@ -36,7 +36,7 @@ http://www.sca.gov.cn/sca/xwdt/2010-12/17/1002389/files/302a3ada057c4a73830536d0
 * P1(X)=`X ⊕ (X ≪ 15) ⊕ (X ≪ 23)`
 ### 三、算法描述
 #### 3.1 概述
-        对长度为l(l < 2^64) 比特的消息m，SM3杂凑算法经过填充和迭代压缩，生成杂凑值，杂凑值长度为256比特。
+    对长度为l(l < 2^64) 比特的消息m，SM3杂凑算法经过填充和迭代压缩，生成杂凑值，杂凑值长度为256比特。
 #### 3.2 填充
         假设消息m的长度为l比特。首先将比特"1"添加到消息的末尾，再添加k个"0"，k是满足l + 1 + k ≡ 448 mod 512的最小的非负整数。然后再添加一个64位比特串，
     该比特串是长度l的二进制表示。填充后的消息m′ 的比特长度为512的倍数。
@@ -74,12 +74,13 @@ https://github.com/gongxian-ding/gmssl-python/blob/master/gmssl/sm2.py
     国家密码管理部门经过研究，决定采用SM2椭圆曲线算法替换RSA算法。SM2算法在安全性、性能上都具有优势。
 ### 二、获取公私钥
 <div align=center>
-<img width="400" alt="pic4" src="https://user-images.githubusercontent.com/109841017/181905314-fc81d604-d65b-427f-9b51-28c0b868cd0a.png">
+<img width="900" alt="pic4" src="https://user-images.githubusercontent.com/109841017/181905314-fc81d604-d65b-427f-9b51-28c0b868cd0a.png">
 </div>
-    其中**密钥对**的生成如下：<br>
-    1.产生随机整数d[1,n-2]
-    2.G为基点，计算点P=(xP,yP)=[d]G
-    3.密钥对为(d,P)，其中d为私钥，P为公钥
+  
+  其中**密钥对**的生成如下：<br>
+  1.产生随机整数d[1,n-2]<br>
+  2.G为基点，计算点P=(xP,yP)=[d]G<br>
+  3.密钥对为(d,P)，其中d为私钥，P为公钥
 ### 三、SM2加密
     M为明文字符串
     1.获取随机数k
@@ -101,14 +102,13 @@ https://github.com/gongxian-ding/gmssl-python/blob/master/gmssl/sm2.py
     7.M~为明文
 ### 五、运行结果
 * sm2:
-<div align=center>
-<img width="900" alt="pic6" src="https://user-images.githubusercontent.com/109841017/181905324-c3e5ace9-68db-4312-bd18-f69824d3d4f8.png">
-</div>
-
+  <div align=center>
+  <img width="900" alt="pic6" src="https://user-images.githubusercontent.com/109841017/181905324-c3e5ace9-68db-4312-bd18-f69824d3d4f8.png">
+  </div>
 * sm2-gmssl:
-<div align=center>
-<img width="900" alt="pic7" src="https://user-images.githubusercontent.com/109841017/181905337-f6719a6a-f6fe-4091-b3f6-b211d1ddaf44.png">
-</div>
+  <div align=center>
+  <img width="900" alt="pic7" src="https://user-images.githubusercontent.com/109841017/181905337-f6719a6a-f6fe-4091-b3f6-b211d1ddaf44.png">
+  </div>
 
 # SM4: :boom::boom::boom:
 ### Original:<br>
@@ -141,25 +141,22 @@ CK=(CK_0,CK_1,...,CK_31)<br>
          rk_i=K_i+4=K_i⊕T'(K_i+1⊕K_i+2⊕K_i+3⊕CK_i)
          其中 T：B⊕(B<<<13)⊕(B<<<23)
 ### 三、加密算法
-        加密算法包含32次迭代运算和1次反序变换R，假设输入明文为(X_0,X_1,X_2,X_3)，密文输出为(Y_0,Y_1,Y_2,Y_3)，轮密钥为rk_i(i=0,1,...,31)。
-![error](pictures/pic9.png "迭代运算")
-<div align=center>
-
-</div>
+  加密算法包含32次迭代运算和1次反序变换R，假设输入明文为(X_0,X_1,X_2,X_3)，密文输出为(Y_0,Y_1,Y_2,Y_3)，轮密钥为rk_i(i=0,1,...,31)。
+    <div align=center>
+    <img width="900" alt="pic9" src="https://user-images.githubusercontent.com/109841017/181905774-5aac6919-efb3-4edf-8f51-f85ab9f55791.png">
+    </div>
     1.首先执行32次迭代运算，如（1）式所示。<br>
     2.对最后一轮数据进行反序变换并得到密文输出，如（2）式所示。<br>
     `（1）和（2）中的T是可逆变换，由非线性变换τ和线性变换L复合而成，即T(·)=L(τ(·))。
     其中τ使用4个S盒并行组成，如（3）式所示。L是线性变换，如（4）式所示。`
 ### 四、解密算法
-    解密算法与加密算法一致，只是在解密算法中逆序使用轮密钥，即(rk_31,rk_30,...,rk_0)。
+  解密算法与加密算法一致，只是在解密算法中逆序使用轮密钥，即(rk_31,rk_30,...,rk_0)。
 ### 五、运行结果
 * sm4-gmssl:<br>
-![error](pictures/pic8.png "sm4-gmssl结果")
-<div align=center>
-
-</div>
+  <div align=center>
+  <img width="900" alt="pic8" src="https://user-images.githubusercontent.com/109841017/181905958-8db5613e-8877-4a52-81c2-824ff225fa3a.png">
+  </div>
 * sm4:<br>
-![error](pictures/pic10.png "sm4结果")
-<div align=center>
-
-</div>
+  <div align=center>
+  <img width="900" alt="pic8" src="https://user-images.githubusercontent.com/109841017/181905969-e6a88c44-f957-486b-bb21-12ada4ab416b.png">
+  </div>
