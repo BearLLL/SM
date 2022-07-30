@@ -10,4 +10,6 @@ https://github.com/hjzin/SM3LengthExtensionAttack/blob/master/%E5%AE%9E%E9%AA%8C
     2.生成一个附加消息（m`），用hash1推算出加密结束后8个向量的值，再用它们去加密m`，得到hash值（hash2）。
     3.计算m + padding + m`的hash值（hash3），如果攻击成功，则有 hash2 = hash3。
 ### 三、攻击结果
-![error](pictures/pic11.png "攻击结果")
+  <div align=center>
+  <img width="900" alt="pic11" src="https://user-images.githubusercontent.com/109841017/181906027-477e4ce6-33eb-48c6-b87a-6b7c28aae3b9.png">
+  </div>
